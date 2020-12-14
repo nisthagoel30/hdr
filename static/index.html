@@ -11,8 +11,13 @@
         }
 
         body{
-          background-image: url(bg.jpg);
-          background-size: 100% 100%;
+          background-image: url(https://cdn.pixabay.com/photo/2019/02/22/19/03/digits-4014181__340.jpg);
+          background-color: rgba(255,255,255,0.6);
+          background-blend-mode: lighten;
+          background-position: center;
+          background-repeat: no-repeat;
+          background-size: cover;
+
         }
 
 
@@ -22,9 +27,7 @@
             border-style: double;
             border-width: 3mm;
             border-color: rgb(70, 130, 180);
-
-            
-            
+            position: center;
         }
 
         h1{
@@ -34,33 +37,56 @@
 
         #predict{
           border-width: 3mm;
-          border-color: seagreen;
-          background-color: steelblue;
+          border-color: rgb(68, 201, 108);
+          background-color: rgb(151, 183, 209);
+          width:160px;
+          height:50px;
         }
 
         #clear{
           border-width: 3mm;
-          border-color: seagreen;
-          background-color: steelblue;
+          border-color: rgb(68, 201, 108);
+          background-color:  rgb(151, 183, 209);
+          width:160px;
+          height:50px;
         }
-
-        
+        #description{
+          background-color: azure;
+        }
+        #prediction_text{
+          text-align: center;
+          background-color: azure;
+        }
+        h2{
+          color:rgb(44, 16, 201);
+        }
           
     
     </style>
   </head>
   <body>
-    <p id="prediction_text">Prediction:none</p>
     <div id="mp">
-      <h1>DIGIT RECOGNITION APP</h1>
+      <h1>HANDWRITTEN-DIGIT RECOGNITION APP</h1>
       <canvas  id="canvas" width="300" height="300"  ></canvas>
-      <p><input type="button" id="predict" value="PREDICT">
-        <input type="button" id="clear" value="CLEAR">
+      <p><h4><input type="button" id="predict" value="PREDICT">
+        <input type="button" id="clear" value="CLEAR"></h4>
       </p>
       <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@2.0.0/dist/tf.min.js"></script>
       <script src="draw.js"></script>
       <script src="predict.js"></script>
+    </div>
+      <div id="prediction_text">
+        <p><h2>Prediction:none</h2></p>
       </div>
-      <div><p>This project enables the user to identify the handwritten digits of various kind.</p></div>
+      <div id="description">
+        <ul>
+          <li>This project enables the user to identify the handwritten digits of various kind throgh a model which is trained using mnist dataset which contains several handwritten digits.</li>
+          <li>This project is developed using various technologies like python,html,css,javascript and so on.</li>
+          <li>Tensorflow is used as the machine learning platform for building this app.</li>
+          <li>Some basic knowledge of CNN and deep learning is required.</li>
+          <li>The accuracy of this project is 98.81 on test data for now.</li>
+        </ul>
+
+      </div>
   </body>
 </html>
