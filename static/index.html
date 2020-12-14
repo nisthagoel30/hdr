@@ -27,7 +27,7 @@
             border-style: double;
             border-width: 3mm;
             border-color: rgb(70, 130, 180);
-            position: center;
+            position:left;
         }
 
         h1{
@@ -50,45 +50,72 @@
           width:160px;
           height:50px;
         }
-        #description{
+        .description{
           background-color: azure;
+          height: 430px;
         }
-        #prediction_text{
-          text-align: center;
-          background-color: azure;
-        }
+        
         h2{
           color:rgb(44, 16, 201);
         }
-          
+        #prediction_text{
+          text-align:center;
+          background-color: azure;
+          width:320px;
+          color:rgb(9, 182, 101);
+        }
+        .box{
+          padding-left: 200px;
+        }
+        .float-container {
+          padding: 20px;
+        }
+
+        .float-child {
+          width: 50%;
+          float: left;
+          padding: 20px;
+        }  
+        .end{
+          clear:both;
+          text-align: center;
+          background-color:chartreuse;
+        }
     
     </style>
   </head>
   <body>
     <div id="mp">
       <h1>HANDWRITTEN-DIGIT RECOGNITION APP</h1>
-      <canvas  id="canvas" width="300" height="300"  ></canvas>
-      <p><h4><input type="button" id="predict" value="PREDICT">
-        <input type="button" id="clear" value="CLEAR"></h4>
-      </p>
-      <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@2.0.0/dist/tf.min.js"></script>
-      <script src="draw.js"></script>
-      <script src="predict.js"></script>
     </div>
-      <div id="prediction_text">
-        <p><h2>Prediction:none</h2></p>
+    <div class="float-container">
+      <div class="float-child">
+        <div class="box">
+        
+          <canvas  id="canvas" width="300" height="300"  ></canvas>
+          <p><h4><input type="button" id="predict" value="PREDICT">
+            <input type="button" id="clear" value="CLEAR"></h4></p>
+          <p id="prediction_text">Prediction: none</p>
+          <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@2.0.0/dist/tf.min.js"></script>
+          <script src="draw.js"></script>
+          <script src="predict.js"></script>
+        </div>
       </div>
-      <div id="description">
-        <h3>Project Description:</h3>
-        <ul>
-          <li>This project enables the user to identify the handwritten digits of various kind throgh a model which is trained using mnist dataset which contains several handwritten digits.</li>
-          <li>This project is developed using various technologies like python,html,css,javascript and so on.</li>
-          <li>Tensorflow is used as the machine learning platform for building this app.</li>
-          <li>Some basic knowledge of CNN and deep learning is required.</li>
-          <li>The accuracy of this project is 98.81 on test data for now.</li>
-        </ul>
-
+      <div class="float-child">
+        <div class="description">
+          <h3><p>------------------Project Description-----------------</p></h3>
+          <ul>
+            <li>This project enables the user to identify the handwritten digits of various kind through a model which is trained using mnist dataset which contains several handwritten digits.</li>
+            <li>This project is developed using various technologies like python,html,css,javascript.</li>
+            <li>Tensorflow is used as the machine learning platform for building this app.</li>
+            <li>Some basic knowledge of CNN and deep learning is required to understand the working of model.</li>
+            <li>The accuracy of this model is 98.81% on test data for now.</li>
+            <li>This project is created using google colab notebook and visual studio and then deployed to heroku.</li>
+          </ul>
+        </div>
       </div>
-      <h4>Thanks for using our app!</h4>
-        </body>
+      <div class="end"><h4>Thanks for using our app!</h4></div>
+    </div>
+    
+  </body>
 </html>
