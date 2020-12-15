@@ -9,7 +9,7 @@ let model;
 
 var tf_img, resized_img, normalized_img, final_img, output, label;
 var prediction_text = document.getElementById('prediction_text');
-console.log(prediction_text);
+
 // Starting Prediction Procedure
 document.getElementById('predict').addEventListener('click', function () {
 
@@ -66,3 +66,4 @@ document.getElementById('clear').addEventListener('click', function () {
 
    
 });
+

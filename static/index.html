@@ -28,7 +28,7 @@
             border-style: double;
             border-width: 3mm;
             border-color: rgb(70, 130, 180);
-            position:left;
+            position:center;
         }
 
         h1{
@@ -51,10 +51,6 @@
           width:160px;
           height:50px;
         }
-        .description{
-          background-color: azure;
-          height: 430px;
-        }
         
         h2{
           color:rgb(44, 16, 201);
@@ -63,60 +59,150 @@
           text-align:center;
           background-color: azure;
           width:320px;
+          margin-left: 535px;
           color:rgb(9, 182, 101);
+          font-size:larger; 
         }
         .box{
-          padding-left: 200px;
+          text-align: center;
         }
-        .float-container {
-          padding: 20px;
-        }
-
-        .float-child {
-          width: 50%;
-          float: left;
-          padding: 20px;
-        }  
+        
         .end{
           clear:both;
           text-align: center;
           background-color:chartreuse;
         }
+        .sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+
+.sidenav a, .dropdown-btn {
+  padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  font-size: 20px;
+  color: #818181;
+  display: block;
+  border: none;
+  background: none;
+  width: 100%;
+  text-align: left;
+  cursor: pointer;
+  outline: none;
+}
+
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+.dropdown-container {
+  display: none;
+  background-color: black;
+  
+}
+
+/* Optional: Style the caret down icon */
+.fa-caret-down {
+  float: right;
+  padding-right: 8px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
     
     </style>
   </head>
   <body>
+    <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span>
     <div id="mp">
+      
       <h1>HANDWRITTEN-DIGIT RECOGNITION APP</h1>
     </div>
-    <div class="float-container">
-      <div class="float-child">
-        <div class="box">
+    <div class="box">
         
-          <canvas  id="canvas" width="300" height="300"  ></canvas>
-          <p><h4><input type="button" id="predict" value="PREDICT">
-            <input type="button" id="clear" value="CLEAR"></h4></p>
-          <p id="prediction_text">Prediction: none</p>
-          <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@2.0.0/dist/tf.min.js"></script>
-          <script src="draw.js"></script>
-          <script src="predict.js"></script>
-        </div>
-      </div>
-      <div class="float-child">
-        <div class="description">
-          <h3><p>---------------------Project Description--------------------</p></h3>
-          <ul>
-            <li>This project enables the user to identify the handwritten digits of various kind through a model which is trained using mnist dataset which contains several handwritten digits.</li>
-            <li>This project is developed using various technologies like python,html,css,javascript.</li>
-            <li>Tensorflow is used as the machine learning platform for building this app.</li>
-            <li>Some basic knowledge of CNN and deep learning is required to understand the working of model.</li>
-            <li>The accuracy of this model is 98.81% on test data for now.</li>
-            <li>This project is created using google colab notebook and visual studio and then deployed to heroku.</li>
-          </ul>
-        </div>
-      </div>
-      <div class="end"><h4>Thanks for using our app!</h4></div>
+      <canvas  id="canvas" width="300" height="300"  ></canvas>
+      <p><h4><input type="button" id="predict" value="PREDICT">
+        <input type="button" id="clear" value="CLEAR"></h4></p>
+        <p id="prediction_text">Prediction: none</p>
+      <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@2.0.0/dist/tf.min.js"></script>
+      <script src="draw.js"></script>
+      <script src="predict.js"></script>
     </div>
+    <div id="mySidenav" class="sidenav">
+      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+      <button class="dropdown-btn">About Project 
+        <i class="fa fa-caret-down"></i>
+      </button>
+      <div class="dropdown-container" style="color:white"><ul>
+        <li>This project enables the user to identify the handwritten digits of various kind through a model which is trained using mnist dataset which contains several handwritten digits.</li>
+        <li>The accuracy of this model is 98.81% on test data for now.</li>
+        <li>This project is created using google colab notebook and visual studio and then deployed to heroku.</li></ul>
+      </div>
+      <button class="dropdown-btn">Technologies used 
+        <i class="fa fa-caret-down"></i>
+      </button>
+      <div class="dropdown-container" style="color:white">
+        <ul >
+          
+          <li>This project is developed using various technologies like python,html,css,javascript.</li>
+          <li>Tensorflow is used as the machine learning platform for building this app.</li>
+          <li>Some basic knowledge of CNN and deep learning is required to understand the working of model.</li>
+         
+         </ul>
+        
+      </div>
+      <button class="dropdown-btn"> Developer's Contact
+        <i class="fa fa-caret-down"></i>
+      </button>
+      <div class="dropdown-container" >
+        <p style="color:white">This app is developed by Nistha Goel under the mentorship of Mr. Samarth Agarwal during an event called Buildathon(CODE-BIET,Jhansi)</p>
+        <a href = "mailto: nistha.goel30@gmail.com"><p>Email:nistha.goel30@gmail.com</p></a>
+        
+      </div>
+    </div>
+    <script>
+      function openNav() {
+    document.getElementById("mySidenav").style.width = "250px";
+  }
+  
+  function closeNav() {
+    document.getElementById("mySidenav").style.width = "0";
+  }
+  var dropdown = document.getElementsByClassName("dropdown-btn");
+  var i;
+  
+  for (i = 0; i < dropdown.length; i++) {
+    dropdown[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var dropdownContent = this.nextElementSibling;
+    if (dropdownContent.style.display === "block") {
+    dropdownContent.style.display = "none";
+    } else {
+    dropdownContent.style.display = "block";
+    }
+    });
+  }
+    </script>
+
+    <div class="end"><h4>Thanks for using our app!</h4></div>
+    
     
   </body>
 </html>
