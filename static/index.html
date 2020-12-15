@@ -57,9 +57,7 @@
         }
         #prediction_text{
           text-align:center;
-          background-color: azure;
-          width:320px;
-          margin-left: 535px;
+          background-color: azure;  
           color:rgb(9, 182, 101);
           font-size:larger; 
         }
@@ -140,7 +138,7 @@
       <canvas  id="canvas" width="300" height="300"  ></canvas>
       <p><h4><input type="button" id="predict" value="PREDICT">
         <input type="button" id="clear" value="CLEAR"></h4></p>
-        <p id="prediction_text">Prediction: none</p>
+        <div><p id="prediction_text">Prediction: none</p></div>
       <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@2.0.0/dist/tf.min.js"></script>
       <script src="draw.js"></script>
       <script src="predict.js"></script>
